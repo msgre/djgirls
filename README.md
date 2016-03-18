@@ -136,6 +136,52 @@ z nich.
 
 ![Demonstrace wrapper skriptu](assets/demo.gif)
 
+Scenar:
+
+    # this is my initial situation
+    # (few files, empty src/ subdir)
+    $ ls -l
+    $ find .
+    $ clear
+
+    # let's build our "binary" image
+    $ ./djg.sh build
+    # done
+    $ clear
+
+    # now we initiate new django project
+    $ ./djg.sh init mysite
+    $ find .
+    # see? there is new content is src/ dir
+    # it was created through Docker container, but placed on my host machine
+    # ie. it is fully editable
+    $ vim src/settings.py
+    $ clear
+
+    # let's interact with Django console
+    $ ./djg.sh shell
+    >>> # now I am inside Docker container
+    >>> import django
+    >>> django.VERSION
+    >>> # hm... IPython console is way better than this, let's change it
+    $ clear
+
+    # put your own requirements file inside src/ dir
+    $ vim src/requirements.txt
+    Django==1.9
+    ipython
+    $ ./djg.sh build
+    $ ./djg.sh shell
+    # voila, we are in IPython shell (Docker image rebuild was needed)
+    $ clear
+
+    # last example -- migration and runserver in one step
+    $ ./djg.sh local
+
+    # now open your browser on given URL
+    # you will see initial screen of new Django application
+
+
 # Nevyhody
 
 - jedna velka magie
