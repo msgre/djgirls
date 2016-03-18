@@ -1,6 +1,10 @@
 Reakce na problemy s pripravou vyvojoveho prostredi na pocitacich devcat z akce 
 DjangoGirls 2016 Bratislava.
 
+Proof of concept. Je mozne proces instalace zjednodusit? Dokaze s pomoci Dockeru
+unifikovat pristup nezavisly na platforme? Je mozne zmensit porci informaci
+ktere musi devcata vstrebat diky "magii" kolem vyvojoveho prostredi a deploye?
+
 # Co resim
 
 - jednodussi start vyvojoveho prostredi v pocitacich ucastnic akce typu DjangoGirls
